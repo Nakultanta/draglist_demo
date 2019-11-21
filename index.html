@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Draggable</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-shadow: none;
+        font-family: sans-serif;
+        user-select: none;
+        list-style: none;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .wrapper .box {
+        width: 80%;
+        margin-top: 10%;
+        text-align: center;
+        border: 2px solid #333;
+    }
+
+    .box h1 {
+        background: #f35444;
+        color: #fff;
+        padding: 20px;
+    }
+
+    .box ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box li {
+        padding: 30px;
+        margin: 5px;
+        background: #000;
+        color: #fff;
+        font-size: 2em;
+    }
+
+    li:hover {
+        background: #f35444;
+        cursor: grab;
+    }
+    
+    .box li.draggable-source--is-dragging {
+        background-color: #fff;
+        background-image: url(images/bg.png);
+        background-size: 20px;
+        color: #333;
+    }
+    
+    .box li.draggable-mirror {
+        background: #f35444;
+    }
+
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <h1>Dragabble list</h1>
+            <ul>
+                <li>
+                    <div class="card">
+                        <p>one</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <p>two</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <p>three</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <p>four</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <p>five</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Entire bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/sortable.js"></script>
+
+
+
+
+    <script>
+        const sortable = new Sortable.default(document.querySelectorAll('ul'), {
+            draggable: 'li'
+        });
+
+    </script>
+</body>
+
+</html>
